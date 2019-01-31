@@ -3,7 +3,7 @@ body {
   font-family: Arial;
   background: #171c30;
 }
-.HomeLayout {
+.VideoLayout {
   display: flex;
   margin: 0 auto;
   min-height: 100vh;

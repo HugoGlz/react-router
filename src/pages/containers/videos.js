@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import HomeLayout from '../components/home-layout';
+import VideoLayout from '../components/video-layout';
 import Categories from '../../categories/components/categories';
 import Related from '../components/related';
 import ModalContainer from '../../widgets/containers/modal';
@@ -28,10 +28,20 @@ class Home extends Component {
     // })
     this.props.actions.closeModal()
   }
+  
+  componentDidMount(){
+	  const search = this.props.location.search;
+
+	  if ( search ){
+		  const id = search.split('=')[1];
+		this.handleOpenModal(id)
+	  }
+  }
+  
   render() {
     return (
       <HandleError>
-        <HomeLayout>
+        <VideoLayout>
           <Related />
           <Categories
             categories={this.props.categories}
@@ -54,7 +64,7 @@ class Home extends Component {
               </Modal>
             </ModalContainer>
           }
-        </HomeLayout>
+        </VideoLayout>
       </HandleError>
     )
   }
