@@ -15,6 +15,7 @@ import { Route, Switch, Redirect } from 'react-router-dom';
 
 import NotFound from '../components/not-found'
 import Header from '../components/header';
+import Video from './video';
 
 // function logger({ getState, dispatch}) {
 //   return (next) => {
@@ -58,6 +59,7 @@ class App extends Component {
 					<Switch>
 						<Route exact path="/" component={Home}/>
 						<Route exact path="/videos" component={Videos} />
+						<Route exact path="/videos/:id" component={Video} />
 						<Redirect from='/v' to="./videos"/>
 						<Route component={NotFound} />
 					</Switch>
