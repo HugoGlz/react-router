@@ -1,5 +1,9 @@
 import React, { PureComponent } from 'react';
+
+import { withRouter } from 'react-router-dom';
+
 import './generic-page.css';
+
 
 class NotFound extends PureComponent {
 	
@@ -50,4 +54,4 @@ class NotFound extends PureComponent {
   }
 }
 
-export default NotFound
+export default withRouter(NotFound)
